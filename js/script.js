@@ -1,24 +1,33 @@
 const pc_input = document.getElementById('pc_input');
 const pc_submit = document.getElementById('pc_submit');
-
+const inputError = document.getElementById('inputError');
+const newSearch = document.getElementById('newSearch');
 
 let codeInsee
 let pc
 let cityN = 0 //1st city out of all with the same code
 let day = 0 //1st day out of 14
+let valueInput;
+
+
+
 
 pc_input.onchange = function(){
-    if(pc_input.value.length == 5){
-        pc_submit.disabled=false;
-        pc_input
+    inputError.textContent="";
+    valueInput = pc_input.value;   
+    let regex = /^[0-9]+$/;
+
+    if(valueInput.length == 5 && regex.test(valueInput)){
+        pc_submit.disabled=false;  
     }
     else{
-        pc_submit.disabled=true;
+        inputError.textContent="Error you cannot input characters";
+        pc_input.value="";
     }
 }
 
 pc_submit.addEventListener('click', () => {
-    pc = pc_input.value
+    pc = valueInput;
 
     fetch('https://geo.api.gouv.fr/communes?codePostal='.concat(pc))
     .then(response => response.json())
@@ -48,11 +57,17 @@ pc_submit.addEventListener('click', () => {
             console.error('Erreur lors de la requête API:', error)
         })
     })
+    pc_submit.style.display = 'none';
+    newSearch.style.display='block';
 })
 
 function loading(){
     pc_submit.disabled=true;
-    console.log("hello");
+    newSearch.style.display='none';
 }
+
+newSearch.addEventListener("click",()=>{
+    location.reload();
+});
 
 document.addEventListener("DOMContentLoaded",loading);
