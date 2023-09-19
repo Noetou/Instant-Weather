@@ -1,11 +1,21 @@
-const pc_input = document.getElementById('pc_input')
-const pc_submit = document.getElementById('pc_submit')
+const pc_input = document.getElementById('pc_input');
+const pc_submit = document.getElementById('pc_submit');
 
 
 let codeInsee
 let pc
 let cityN = 0 //1st city out of all with the same code
 let day = 0 //1st day out of 14
+
+pc_input.onchange = function(){
+    if(pc_input.value.length == 5){
+        pc_submit.disabled=false;
+        pc_input
+    }
+    else{
+        pc_submit.disabled=true;
+    }
+}
 
 pc_submit.addEventListener('click', () => {
     pc = pc_input.value
@@ -39,3 +49,10 @@ pc_submit.addEventListener('click', () => {
         })
     })
 })
+
+function loading(){
+    pc_submit.disabled=true;
+    console.log("hello");
+}
+
+document.addEventListener("DOMContentLoaded",loading);
