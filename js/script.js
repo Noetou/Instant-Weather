@@ -19,7 +19,7 @@ pc_input.addEventListener('input',()=>{
 
     if(valueInput.length == 5){
         if(regex.test(valueInput)){
-            pc_submit.disabled=false; 
+            pc_submit.disabled=false;    
         }
         else{
             inputError.textContent="Error you cannot input characters";
@@ -30,11 +30,18 @@ pc_input.addEventListener('input',()=>{
 
 pc_submit.addEventListener('click', () => {
     pc = valueInput;
+    pc_input.disabled=true;
 
     fetch('https://geo.api.gouv.fr/communes?codePostal='.concat(pc))
     .then(response => response.json())
     .then(data => {
-        codeInsee = data[cityN]['code']
+        try{
+            codeInsee = data[cityN]['code']
+        }
+        catch{
+            inputError.textContent="The post code entered is unknown";
+            return;
+        }
         fetch(`https://api.meteo-concept.com/api/forecast/daily?token=9fc5110929e9db4b61fcc700441c5d39e82c9e6d6aeeacc3223498621f238c38&insee=${codeInsee}`)
         .then(response => response.json())
         .then(data => {
@@ -42,7 +49,6 @@ pc_submit.addEventListener('click', () => {
             let minTemp = data['forecast'][day]['tmin']
             let rainProb = data['forecast'][day]['probarain']
             let dailySunHours = data['forecast'][day]['sun_hours']
-            
             let array = []
             array[0] = maxTemp
             array[1] = minTemp
