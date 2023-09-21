@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Application de météo instantanée </title>
+    <title> Instant Weather web application </title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <label for="pc_input">Enter post code:</label>
-    <input type="number" id="pc_input">
-    <input type="submit" value="Send" id="pc_submit">
+    <header> </header>
+    <div id="main">
+    <h1> Instant Weather </h1>
+    <h2> Welcome to this instant weather web application !</h2>
+    <p> Get the weather of the city you choose, it must be a French post code. </p>
+    </div>
+    <form>
+        <label for="pc_input">Enter post code:</label>
+        <br>
+        <input type="number" id="pc_input" placeholder="Enter post code here">
+        <input type="submit" value="Send" id="pc_submit">
+    </form>
     <div id="placeholder"></div>
+    
+    
     <script src="./js/script.js"></script>
 </body>
+
 </html>
