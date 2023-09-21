@@ -12,19 +12,21 @@ let valueInput;
 
 
 
-pc_input.onchange = function(){
+pc_input.addEventListener('input',()=>{
     inputError.textContent="";
     valueInput = pc_input.value;   
     let regex = /^[0-9]+$/;
 
-    if(valueInput.length == 5 && regex.test(valueInput)){
-        pc_submit.disabled=false;  
-    }
-    else{
-        inputError.textContent="Error you cannot input characters";
-        pc_input.value="";
-    }
-}
+    if(valueInput.length == 5){
+        if(regex.test(valueInput)){
+            pc_submit.disabled=false; 
+        }
+        else{
+            inputError.textContent="Error you cannot input characters";
+            pc_input.value="";
+        }      
+    }   
+});
 
 pc_submit.addEventListener('click', () => {
     pc = valueInput;
