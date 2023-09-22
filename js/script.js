@@ -13,7 +13,6 @@ let valueInput;
 
 
 
-
 pc_input.addEventListener('input', () => {
     inputError.textContent = "";
     valueInput = pc_input.value;
@@ -33,7 +32,10 @@ pc_input.addEventListener('input', () => {
                         inputError.textContent = "The post code entered is unknown";
                         return;
                     }
-                    if (data.length > 1) {
+                    if(!document.querySelectorAll("select").length==0){
+                        document.querySelector("select").remove();
+                    }
+                    if (data.length > 1 ) {
                         const selectInput = document.createElement("select")
                         for (let index = 0; index < data.length; index++) {
                             let option = document.createElement("option")
@@ -42,7 +44,6 @@ pc_input.addEventListener('input', () => {
                             selectInput.append(option)
                         }
                         displayParam.insertBefore(selectInput, placeholder)
-
                         selectInput.addEventListener("change", () => {
                             codeInsee = data[selectInput.value]['code']
                         })
@@ -87,10 +88,6 @@ pc_submit.addEventListener('click', () => {
             placeholder.appendChild(weatherTmax);
             placeholder.appendChild(weatherPrain);
             placeholder.appendChild(weatherSunHours);
-          
-
-
-
     })
         .catch(error => {
             console.error('Error during API request:', error);
