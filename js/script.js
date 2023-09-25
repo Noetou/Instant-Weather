@@ -80,12 +80,12 @@ pc_submit.addEventListener('click', () => {
             let weatherPrain = document.createElement('div');
             let weatherSunHours = document.createElement('div');
             // Ajouter du contenu aux divs
-            weatherTmin.innerHTML = `Minimale temperature : ${data['forecast'][day]['tmax']}°C`;
-            weatherTmax.innerHTML = `Maximale temperature : ${data['forecast'][day]['tmin']}°C`;
+            weatherTmin.innerHTML = `Lowest temperature : ${data['forecast'][day]['tmin']}°C`;
+            weatherTmax.innerHTML = `Highest temperature : ${data['forecast'][day]['tmax']}°C`;
             weatherPrain.innerHTML = `Rain probability : ${data['forecast'][day]['probarain']}%`;
             weatherSunHours.innerHTML = `Daily sun hours : ${data['forecast'][day]['sun_hours']}h`;
-            placeholder.appendChild(weatherTmin);
             placeholder.appendChild(weatherTmax);
+            placeholder.appendChild(weatherTmin);
             placeholder.appendChild(weatherPrain);
             placeholder.appendChild(weatherSunHours);
     })
