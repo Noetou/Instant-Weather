@@ -24,14 +24,20 @@
     <div id="form">
         <label for="pc_input">Enter post code :</label>
         <br>
-        <input type="text" id="pc_input" placeholder="Enter post code here" maxlength="5">       
-        <input type="submit"  value="Send" id="pc_submit" class="swirl-in-fwd" >
-        
+        <input type="text" id="pc_input" placeholder="Enter post code here" maxlength="5">
+        <input type="submit" value="Send" id="pc_submit" class="swirl-in-fwd">
+
         <div id="inputError"></div>
         <div class="displayParam">
             <div id="placeholder"></div>
         </div>
-        <button id="newSearch" class="swirl-in-fwd">New Search</button>        
+        <button id="newSearch" class="swirl-in-fwd">New Search</button>
+    </div>
+    <h1>Choose day</h1>
+    <div class="day-selection">
+        <label for="vol">Day :</label>
+        <p id="day">1</p>
+        <input type="range" id="vol" name="vol" min="1" max="7" value="1">
     </div>
     <script src="./js/script.js"></script>
 </body>
