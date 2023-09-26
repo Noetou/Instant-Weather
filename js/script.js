@@ -4,11 +4,13 @@ const inputError = document.getElementById('inputError');
 const newSearch = document.getElementById('newSearch');
 const placeholder = document.getElementById('placeholder');
 const displayParam = document.getElementsByClassName('displayParam')[0];
+const dayDisplay = document.getElementById('day');
+const dayRange = document.getElementById('vol');
 
+let days = 0
 let codeInsee
 let pc
 let cityN = 0 //1st city out of all with the same code
-let day = 0 //1st day out of 14
 let valueInput;
 
 
@@ -80,10 +82,10 @@ pc_submit.addEventListener('click', () => {
             let weatherPrain = document.createElement('div');
             let weatherSunHours = document.createElement('div');
             // Ajouter du contenu aux divs
-            weatherTmin.innerHTML = `Lowest temperature : ${data['forecast'][day]['tmin']}°C`;
-            weatherTmax.innerHTML = `Highest temperature : ${data['forecast'][day]['tmax']}°C`;
-            weatherPrain.innerHTML = `Rain probability : ${data['forecast'][day]['probarain']}%`;
-            weatherSunHours.innerHTML = `Daily sun hours : ${data['forecast'][day]['sun_hours']}h`;
+            weatherTmin.innerHTML = `Lowest temperature : ${data['forecast'][days]['tmin']}°C`;
+            weatherTmax.innerHTML = `Highest temperature : ${data['forecast'][days]['tmax']}°C`;
+            weatherPrain.innerHTML = `Rain probability : ${data['forecast'][days]['probarain']}%`;
+            weatherSunHours.innerHTML = `Daily sun hours : ${data['forecast'][days]['sun_hours']}h`;
             placeholder.appendChild(weatherTmax);
             placeholder.appendChild(weatherTmin);
             placeholder.appendChild(weatherPrain);
@@ -108,3 +110,9 @@ newSearch.addEventListener("click", () => {
 });
 
 document.addEventListener("DOMContentLoaded",loading);
+
+dayRange.addEventListener("change", () => {
+    dayDisplay.innerHTML = `${vol.value}`;
+    days = vol.value - 1;
+    console.log(days);
+})
