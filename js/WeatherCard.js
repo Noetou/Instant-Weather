@@ -21,6 +21,7 @@ class WeatherCard{
     };
     displayCard(){
         const placeholder = document.getElementById('placeholder');
+        this.dateTimeFormatting();
         this.tab.forEach(element => {
             if(element != null ){
                 let newDiv = document.createElement("div");
