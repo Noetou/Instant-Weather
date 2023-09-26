@@ -2,7 +2,6 @@ const pc_input = document.getElementById('pc_input');
 const pc_submit = document.getElementById('pc_submit');
 const inputError = document.getElementById('inputError');
 const newSearch = document.getElementById('newSearch');
-const placeholder = document.getElementById('placeholder');
 const displayParam = document.getElementsByClassName('displayParam')[0];
 const dayDisplay = document.getElementById('day');
 const dayRange = document.getElementById('vol');
@@ -78,20 +77,9 @@ pc_submit.addEventListener('click', () => {
         .then(response => response.json())
         .then(data => {
             console.table(data);
-    
-            let weatherTmin = document.createElement('div');
-            let weatherTmax = document.createElement('div');
-            let weatherPrain = document.createElement('div');
-            let weatherSunHours = document.createElement('div');
-            // Ajouter du contenu aux divs
-            weatherTmin.innerHTML = `Lowest temperature : ${data['forecast'][days]['tmin']}°C`;
-            weatherTmax.innerHTML = `Highest temperature : ${data['forecast'][days]['tmax']}°C`;
-            weatherPrain.innerHTML = `Rain probability : ${data['forecast'][days]['probarain']}%`;
-            weatherSunHours.innerHTML = `Daily sun hours : ${data['forecast'][days]['sun_hours']}h`;
-            placeholder.appendChild(weatherTmax);
-            placeholder.appendChild(weatherTmin);
-            placeholder.appendChild(weatherPrain);
-            placeholder.appendChild(weatherSunHours);
+            let x = new WeatherCard(data);
+            x.displayCard();
+            x.displayCard();
     })
         .catch(error => {
             console.error('Error during API request:', error);
@@ -113,7 +101,7 @@ newSearch.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded",loading);
 
-dayRange.addEventListener("change", () => {
+dayRange.addEventListener("input", () => {
     dayDisplay.innerHTML = `${vol.value}`;
     days = vol.value - 1;
     console.log(days);
