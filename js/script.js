@@ -2,7 +2,6 @@ const pc_input = document.getElementById('pc_input');
 const pc_submit = document.getElementById('pc_submit');
 const inputError = document.getElementById('inputError');
 const newSearch = document.getElementById('newSearch');
-const placeholder = document.getElementById('placeholder');
 const displayParam = document.getElementsByClassName('displayParam')[0];
 const dayDisplay = document.getElementById('day');
 const dayRange = document.getElementById('vol');
@@ -154,7 +153,12 @@ pc_submit.addEventListener('click', () => {
             divCheckboxes.appendChild(checkboxWindDirection);
 
             placeholder.appendChild(divCheckboxes);
-        })
+        
+            console.table(data);
+            let x = new WeatherCard(data);
+            x.displayCard();
+            x.displayCard();
+    })
         .catch(error => {
             console.error('Error during API request:', error);
         })
@@ -176,7 +180,7 @@ newSearch.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", loading);
 
-dayRange.addEventListener("change", () => {
+dayRange.addEventListener("input", () => {
     dayDisplay.innerHTML = `${vol.value}`;
     days = vol.value - 1;
     console.log(days);
