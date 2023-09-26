@@ -34,7 +34,7 @@ class WeatherCard{
         console.log(this.date);
         let dateTab = this.date.split("-");
         let dateDays = dateTab[2].substr(0,2);
-        const finalDate= dateDays+"-"+dateTab[1]+"-"+dateTab[0];
-        return finalDate;
+        let finalDate= dateDays+"-"+dateTab[1]+"-"+dateTab[0];
+        this.date=finalDate;
     }
 }
