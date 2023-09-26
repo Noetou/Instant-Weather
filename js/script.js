@@ -21,8 +21,7 @@ pc_input.addEventListener('input', () => {
     let regex = /^[0-9]+$/;
 
     if (valueInput.length == 5) {
-        if (regex.test(valueInput)) {
-            pc_submit.disabled = false;
+        if (regex.test(valueInput)) { 
             fetch('https://geo.api.gouv.fr/communes?codePostal='.concat(pc_input.value))
                 .then(response => response.json())
                 .then(data => {
@@ -34,7 +33,8 @@ pc_input.addEventListener('input', () => {
                         inputError.textContent = "The post code entered is unknown";
                         return;
                     }
-                    if (!document.querySelectorAll("select").length == 0) {
+                    pc_submit.disabled = false;
+                    if(!document.querySelectorAll("select").length==0){
                         document.querySelector("select").remove();
                     }
                     if (data.length > 1) {
