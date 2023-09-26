@@ -156,6 +156,7 @@ pc_submit.addEventListener('click', () => {
             console.table(data);
             let x = new WeatherCard(data);
             x.displayCard();
+            x.dateTimeFormatting();
     })
         .catch(error => {
             console.error('Error during API request:', error);
