@@ -75,6 +75,8 @@ pc_submit.addEventListener('click', () => {
         fetch(`https://api.meteo-concept.com/api/forecast/daily?token=9fc5110929e9db4b61fcc700441c5d39e82c9e6d6aeeacc3223498621f238c38&insee=${codeInsee}`)
         .then(response => response.json())
         .then(data => {
+            console.table(data);
+    
             let weatherTmin = document.createElement('div');
             let weatherTmax = document.createElement('div');
             let weatherPrain = document.createElement('div');
