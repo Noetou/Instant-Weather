@@ -10,6 +10,7 @@ class WeatherCard{
         this.windDirection=data['forecast'][day]['dirwind10m'];
         this.sunHours=data['forecast'][day]['sun_hours'];
         this.rainProb=data['forecast'][day]['probarain'];
+        this.date = data['forecast'][days]['datetime'];
 
         this.labels = ['Highest temperature', 'Lowest temperature', 'Latitude', 'Longitude', 'Total rain over the day', 'Wind speed', 'Wind direction', 'Total sun hours', 'Rain probability'];
 
@@ -23,11 +24,14 @@ class WeatherCard{
         this.tab.push(this.windDirection); //
         this.tab.push(this.sunHours); //
         this.tab.push(this.rainProb);
+
+    
     }
 
     displayCard(){
         const placeholder = document.getElementById('placeholder');
-        this.dateTimeFormatting();
+        let date = this.dateTimeFormatting();
+        let index = 0;
         this.tab.forEach(element => {
             if(element != null && usersChoice[index]){
                 let newDiv = document.createElement("div");
@@ -35,27 +39,24 @@ class WeatherCard{
                 newDiv.innerHTML = `${element}`;
                 placeholder.appendChild(newDiv);
             }
+            index ++;
         });
     }
     dateTimeFormatting(){
-        console.log(this.date);
         let dateTab = this.date.split("-");
         let dateDays = dateTab[2].substr(0,2);
         let finalDate= dateDays+"-"+dateTab[1]+"-"+dateTab[0];
         this.date=finalDate;
-        console.log(this.date)
-
         const weekDays = ["Dimanche","Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
         const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
 
         
         const formattedDate = new Date(dateTab[0], dateTab[1]-1, dateDays);   
-        console.log(formattedDate);
         const weekDay = weekDays[formattedDate.getDay()];
         const day = formattedDate.getDate();
         const month = months[formattedDate.getMonth()];
         const year = dateTab[0];
-        console.log(weekDay + " " + day + " "+ month + " " + year);
+        return weekDay + " " + day + " "+ month + " " + year;
           
     }
 }
