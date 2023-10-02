@@ -36,7 +36,7 @@ class WeatherCard{
             if(element != null && usersChoice[index]){
                 let newDiv = document.createElement("div");
                 newDiv.classList.add("card");
-                newDiv.innerHTML = `${element}`;
+                newDiv.innerHTML = `${this.labels[index]} : ${element}`;
                 placeholder.appendChild(newDiv);
             }
             index ++;
