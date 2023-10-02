@@ -27,15 +27,35 @@ class WeatherCard{
 
     displayCard(){
         const placeholder = document.getElementById('placeholder');
-        let index = 0;
+        this.dateTimeFormatting();
         this.tab.forEach(element => {
             if(element != null && usersChoice[index]){
                 let newDiv = document.createElement("div");
                 newDiv.classList.add("card");
-                newDiv.innerHTML = `${this.labels[index]} : ${element}`;
+                newDiv.innerHTML = `${element}`;
                 placeholder.appendChild(newDiv);
             }
-            index++;
         });
+    }
+    dateTimeFormatting(){
+        console.log(this.date);
+        let dateTab = this.date.split("-");
+        let dateDays = dateTab[2].substr(0,2);
+        let finalDate= dateDays+"-"+dateTab[1]+"-"+dateTab[0];
+        this.date=finalDate;
+        console.log(this.date)
+
+        const weekDays = ["Dimanche","Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+        const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+
+        
+        const formattedDate = new Date(dateTab[0], dateTab[1]-1, dateDays);   
+        console.log(formattedDate);
+        const weekDay = weekDays[formattedDate.getDay()];
+        const day = formattedDate.getDate();
+        const month = months[formattedDate.getMonth()];
+        const year = dateTab[0];
+        console.log(weekDay + " " + day + " "+ month + " " + year);
+          
     }
 }
