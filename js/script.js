@@ -258,7 +258,7 @@ newSearch.addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", loading);
 
 dayRange.addEventListener("input", () => {
-    document.querySelectorAll(".card").forEach(e=> e.remove());
+    document.querySelectorAll(".divCards").forEach(e=> e.remove());
     dayDisplay.innerHTML = `${vol.value}`;
     days = vol.value - 1;
     if(!(pc_input.value ==="")){

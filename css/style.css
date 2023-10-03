@@ -112,6 +112,34 @@ button:hover, #pc_submit:hover, select:hover {
     color:whitesmoke;
 }
 
+
+/* weather cards */
+
+.divCards img{
+    height: 50px;
+    float:right;
+    margin-top:20%;
+}
+
+.divCards {
+    padding:5%;
+    width:50%;
+    border : black 2px solid;
+    border-radius: 15px;
+
+}
+
+.divCards :nth-child(0){
+    padding-top: 0;
+}
+
+.divCards div{
+    text-align: left;
+    font-size:20px;
+}
+
+
+
 @media screen and (max-width:800px){
     body{
         font-size:25px

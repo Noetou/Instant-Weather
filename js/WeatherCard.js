@@ -128,21 +128,13 @@ class WeatherCard{
 
     displayCard(){
         const placeholder = document.getElementById('placeholder');
-        let date = this.dateTimeFormatting();
+        
         //this.chooseImage();
         let index = 0;
-        let newDiv;
-        this.tab.forEach(element => {
-            if(element != null && usersChoice[index]){
-                newDiv = document.createElement("div");
-                newDiv.classList.add("card");
-                newDiv.innerHTML = `${this.labels[index]} : ${element}`;
-                placeholder.appendChild(newDiv);
-            }
-            index ++;
-        });
-        //picking the right image according to the weather
+        let divCards = document.createElement("div");
+        divCards.classList.add('divCards');
         let image = document.createElement("img");
+        let date = this.dateTimeFormatting();
         if(this.imageIndex.includes(this.weather)) {
             image.src=`images/weather_icons/${this.weather}.png`;    
         }
@@ -153,7 +145,20 @@ class WeatherCard{
             }
             image.src=`images/weather_icons/${countdown}.png`;
         }
-        newDiv.appendChild(image);
+        divCards.appendChild(image);
+        divCards.appendChild(document.createTextNode(date));
+        this.tab.forEach(element => {
+            if(element != null && usersChoice[index]){
+                let newDiv = document.createElement("div");
+                newDiv.classList.add("card");
+                newDiv.innerHTML = `${this.labels[index]} : ${element}`;
+                divCards.appendChild(newDiv);
+            }
+            index ++;
+        });
+        placeholder.appendChild(divCards);
+        //picking the right image according to the weather
+        
     }
     dateTimeFormatting(){
         let dateTab = this.date.split("-");
@@ -169,7 +174,8 @@ class WeatherCard{
         const day = formattedDate.getDate();
         const month = months[formattedDate.getMonth()];
         const year = dateTab[0];
-        return weekDay + " " + day + " "+ month + " " + year;
+        this.date = weekDay + " " + day + " "+ month + " " + year;
+        return this.date;
           
     }
     /*chooseImage(){
