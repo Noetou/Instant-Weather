@@ -105,7 +105,7 @@ class WeatherCard{
         };
         
         this.labels = ['Highest temperature', 'Lowest temperature', 'Latitude', 'Longitude', 'Total rain over the day', 'Wind speed', 'Wind direction', 'Total sun hours', 'Rain probability'];
-
+       
         this.tab = new Array();
         this.tab.push(this.tMax); //
         this.tab.push(this.tMin); //

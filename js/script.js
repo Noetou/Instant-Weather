@@ -26,6 +26,10 @@ let checkboxWindDirection;
 
 document.addEventListener("DOMContentLoaded", (event) => {
     divCheckboxes = document.createElement('div');
+    var image = document.createElement('img')
+    image.src = '../images/chaud.png';
+    image.id='icone';
+    divCheckboxes.appendChild(image);
     checkboxTMax = document.createElement('input');
     checkboxTMax.type = "checkbox";
     checkboxTMax.id = "TMax";
@@ -35,7 +39,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     labelTMax.appendChild(document.createTextNode("Highest temperature : "));
     divCheckboxes.appendChild(labelTMax);
     divCheckboxes.appendChild(checkboxTMax);
+    divCheckboxes.appendChild(document.createElement('br'));
 
+    var image = document.createElement('img')
+    image.src = '../images/froid.png';
+    image.id='icone';
+    divCheckboxes.appendChild(image);
     checkboxTMin = document.createElement('input');
     checkboxTMin.type = "checkbox";
     checkboxTMin.id = "TMin";
@@ -45,7 +54,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     labelTMin.appendChild(document.createTextNode("Lowest temperature : "));
     divCheckboxes.appendChild(labelTMin);
     divCheckboxes.appendChild(checkboxTMin);
+    divCheckboxes.appendChild(document.createElement('br'));
 
+    var image = document.createElement('img')
+    image.src = '../images/pluie.png';
+    image.id='icone';
+    divCheckboxes.appendChild(image);
     checkboxRainProb = document.createElement('input');
     checkboxRainProb.type = "checkbox";
     checkboxRainProb.id = "RainProb";
@@ -55,8 +69,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
     labelRainProb.appendChild(document.createTextNode("Rain probability : "));
     divCheckboxes.appendChild(labelRainProb);
     divCheckboxes.appendChild(checkboxRainProb);
-
     checkboxSunHours = document.createElement('input');
+    divCheckboxes.appendChild(document.createElement('br'));
+
+    var image = document.createElement('img')
+    image.src = '../images/soleil.png';
+    image.id='icone';
+    divCheckboxes.appendChild(image);
     checkboxSunHours.type = "checkbox";
     checkboxSunHours.id = "SunHours";
     checkboxSunHours.checked = true;
@@ -65,7 +84,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     labelSunHours.appendChild(document.createTextNode("Daily Sun Hours : "));
     divCheckboxes.appendChild(labelSunHours);
     divCheckboxes.appendChild(checkboxSunHours);
+    divCheckboxes.appendChild(document.createElement('br'));
 
+    var image = document.createElement('img')
+    image.src = '../images/fleche.png';
+    image.id='fleche1';
+    divCheckboxes.appendChild(image);
     checkboxLatitude = document.createElement('input');
     checkboxLatitude.type = "checkbox";
     checkboxLatitude.id = "Latitude";
@@ -74,7 +98,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     labelLatitude.appendChild(document.createTextNode("Latitude : "));
     divCheckboxes.appendChild(labelLatitude);
     divCheckboxes.appendChild(checkboxLatitude);
+    divCheckboxes.appendChild(document.createElement('br'));
 
+    var image = document.createElement('img')
+    image.src = '../images/fleche.png';
+    image.id='fleche2';
+    divCheckboxes.appendChild(image);
     checkboxLongitude = document.createElement('input');
     checkboxLongitude.type = "checkbox";
     checkboxLongitude.id = "Longitude";
@@ -83,7 +112,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     labelLongitude.appendChild(document.createTextNode("Longitude : "));
     divCheckboxes.appendChild(labelLongitude);
     divCheckboxes.appendChild(checkboxLongitude);
+    divCheckboxes.appendChild(document.createElement('br'));
 
+    var image = document.createElement('img')
+    image.src = '../images/pluie.png';
+    image.id='icone';
+    divCheckboxes.appendChild(image);
     checkboxCumulatedRain = document.createElement('input');
     checkboxCumulatedRain.type = "checkbox";
     checkboxCumulatedRain.id = "CumulatedRain";
@@ -92,7 +126,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     labelCumulatedRain.appendChild(document.createTextNode("Cumulated rain in mm : "));
     divCheckboxes.appendChild(labelCumulatedRain);
     divCheckboxes.appendChild(checkboxCumulatedRain);
+    divCheckboxes.appendChild(document.createElement('br'));
 
+    var image = document.createElement('img')
+    image.src = '../images/vent.png';
+    image.id='icone';
+    divCheckboxes.appendChild(image);
     checkboxAverageWindSpeed = document.createElement('input');
     checkboxAverageWindSpeed.type = "checkbox";
     checkboxAverageWindSpeed.id = "AverageWindSpeed";
@@ -101,15 +140,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
     labelAverageWindSpeed.appendChild(document.createTextNode("Average wind speed in Km/H : "));
     divCheckboxes.appendChild(labelAverageWindSpeed);
     divCheckboxes.appendChild(checkboxAverageWindSpeed);
+    divCheckboxes.appendChild(document.createElement('br'));
 
+    var image = document.createElement('img')
+    image.src = '../images/manche_à_air.png';
+    image.id='icone';
+    divCheckboxes.appendChild(image);
     checkboxWindDirection = document.createElement('input');
     checkboxWindDirection.type = "checkbox";
     checkboxWindDirection.id = "WindDirection";
     let labelWindDirection = document.createElement('label');
     labelWindDirection.htmlFor = "WindDirection";
-    labelWindDirection.appendChild(document.createTextNode("Wind direction :  : "));
+    labelWindDirection.appendChild(document.createTextNode("Wind direction : "));
     divCheckboxes.appendChild(labelWindDirection);
     divCheckboxes.appendChild(checkboxWindDirection);
+    divCheckboxes.appendChild(document.createElement('br'));
 
     placeholder.appendChild(divCheckboxes);
 });
@@ -194,12 +239,9 @@ pc_submit.addEventListener('click', () => {
            
         })
         .catch(error => {
-            console.error('Error during API request:', error);
+            console.error('Error during API request: ',error);
         })
-
-    pc_submit.style.display = 'none';
-    newSearch.style.display = 'block';
-
+            
 })
 
 
