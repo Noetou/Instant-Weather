@@ -10,8 +10,8 @@ class WeatherCard{
         this.windDirection=data['forecast'][day]['dirwind10m'];
         this.sunHours=data['forecast'][day]['sun_hours'];
         this.rainProb=data['forecast'][day]['probarain'];
-        this.date = data['forecast'][days]['datetime'];
-        this.weather = data['forecast'][days]['weather'];
+        this.date = data['forecast'][day]['datetime'];
+        this.weather = data['forecast'][day]['weather'];
 
         this.imageIndex = [0, 1, 2, 6, 10, 20, 40, 100, 141];
 
@@ -128,6 +128,7 @@ class WeatherCard{
 
     displayCard(){
         const placeholder = document.getElementById('placeholder');
+
         let date = this.dateTimeFormatting();
         //this.chooseImage();
         let index = 0;
