@@ -1,6 +1,6 @@
 class WeatherCard{
 
-    constructor(data, usersChoice, day){      
+    constructor(data, usersChoice, day){  
         this.tMax=data['forecast'][day]['tmax'];
         this.tMin=data['forecast'][day]['tmin'];
         this.latitude=data['forecast'][day]['latitude'];
@@ -13,7 +13,7 @@ class WeatherCard{
         this.date = data['forecast'][days]['datetime'];
         this.weather = data['forecast'][days]['weather'];
 
-
+        this.imageIndex = [0, 1, 2, 6, 10, 20, 40, 100, 141];
 
         this.weatherCodes = {
             0: "Soleil",
@@ -107,7 +107,7 @@ class WeatherCard{
         };
         
         // Exemple d'utilisation :
-        console.log(weatherCodes[10]); // Cela affichera "Pluie faible"
+        //console.log(weatherCodes[10]); // Cela affichera "Pluie faible"
         
 
         this.labels = ['Highest temperature', 'Lowest temperature', 'Latitude', 'Longitude', 'Total rain over the day', 'Wind speed', 'Wind direction', 'Total sun hours', 'Rain probability'];
@@ -129,19 +129,30 @@ class WeatherCard{
     displayCard(){
         const placeholder = document.getElementById('placeholder');
         let date = this.dateTimeFormatting();
-        this.chooseImage();
         let index = 0;
-        
+        let newDiv;
         this.tab.forEach(element => {
             if(element != null && usersChoice[index]){
-                let newDiv = document.createElement("div");
+                newDiv = document.createElement("div");
                 newDiv.classList.add("card");
                 newDiv.innerHTML = `${this.labels[index]} : ${element}`;
                 placeholder.appendChild(newDiv);
             }
             index ++;
-            
         });
+        //picking the right image according to the weather
+        let image = document.createElement("img");
+        if(this.imageIndex.includes(this.weather)) {
+            image.src=`images/weather_icons/${this.weather}.png`;    
+        }
+        else {
+            let countdown = this.weather;
+            while(!this.imageIndex.includes(countdown)) {
+                countdown--;
+            }
+            image.src=`images/weather_icons/${countdown}.png`;
+        }
+        newDiv.appendChild(image);
     }
     dateTimeFormatting(){
         let dateTab = this.date.split("-");
@@ -159,9 +170,5 @@ class WeatherCard{
         const year = dateTab[0];
         return weekDay + " " + day + " "+ month + " " + year;
           
-    }
-    chooseImage(){
-        let label = this.weatherConditions[this.weather];
-        if()
     }
 }
