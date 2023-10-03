@@ -126,6 +126,7 @@ class WeatherCard{
         const placeholder = document.getElementById('placeholder');
         let date = this.dateTimeFormatting();
         let index = 0;
+        
         this.tab.forEach(element => {
             if(element != null && usersChoice[index]){
                 let newDiv = document.createElement("div");
