@@ -1,9 +1,11 @@
 * {
     margin: 0;
     padding: 0;
+    
 }
 
 body{
+    
     font-family: 'Nunito Sans', sans-serif;
     font-size:30px;
     align-items: center;
@@ -11,6 +13,7 @@ body{
     text-align: center;
     background-color: whitesmoke;
     display: inline;
+    background: linear-gradient(to top, #ebbba7 0%, #cfc7f8 100%);
 }
 
 header{
@@ -27,6 +30,7 @@ header{
     height:100%;
     margin:auto;
     color:white;
+    
 }
 
 h1 {
@@ -43,9 +47,10 @@ p{
 }
 
 #info{
+    background-color: rgb(255 255 255 / 0.3);
+    backdrop-filter: blur(10px);
     margin:auto;
     margin-top: 2%;
-    border: 2px solid black;
     height:10%;
     justify-content: center;
     padding-bottom:3%;
@@ -69,7 +74,9 @@ float: right;
 
 
 #form{
-    
+    background-color: rgb(255 255 255 / 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
     margin:auto;
     margin-top: 2%;
     height:10%;
