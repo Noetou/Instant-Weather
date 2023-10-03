@@ -25,10 +25,13 @@ let checkboxWindDirection;
 
 document.addEventListener("DOMContentLoaded", (event) => {
     divCheckboxes = document.createElement('div');
+    divCheckboxes.id='checkbox'
+    divCheckboxes2 = document.createElement('div');
+    divCheckboxes2.id='hot'
     var image = document.createElement('img')
     image.src = '../images/chaud.png';
     image.id='icone';
-    divCheckboxes.appendChild(image);
+    divCheckboxes2.appendChild(image);
     checkboxTMax = document.createElement('input');
     checkboxTMax.type = "checkbox";
     checkboxTMax.id = "TMax";
@@ -36,14 +39,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let labelTMax = document.createElement('label');
     labelTMax.htmlFor = "TMax";
     labelTMax.appendChild(document.createTextNode("Highest temperature : "));
-    divCheckboxes.appendChild(labelTMax);
-    divCheckboxes.appendChild(checkboxTMax);
-    divCheckboxes.appendChild(document.createElement('br'));
+    divCheckboxes2.appendChild(labelTMax);
+    divCheckboxes2.appendChild(checkboxTMax);
+    divCheckboxes2.appendChild(document.createElement('br'));
+    divCheckboxes.appendChild(divCheckboxes2)
 
+    divCheckboxes2 = document.createElement('div');
+    divCheckboxes2.id='cold'
     var image = document.createElement('img')
     image.src = '../images/froid.png';
     image.id='icone';
-    divCheckboxes.appendChild(image);
+    divCheckboxes2.appendChild(image);
     checkboxTMin = document.createElement('input');
     checkboxTMin.type = "checkbox";
     checkboxTMin.id = "TMin";
@@ -51,14 +57,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let labelTMin = document.createElement('label');
     labelTMin.htmlFor = "TMin";
     labelTMin.appendChild(document.createTextNode("Lowest temperature : "));
-    divCheckboxes.appendChild(labelTMin);
-    divCheckboxes.appendChild(checkboxTMin);
-    divCheckboxes.appendChild(document.createElement('br'));
+    divCheckboxes2.appendChild(labelTMin);
+    divCheckboxes2.appendChild(checkboxTMin);
+    divCheckboxes2.appendChild(document.createElement('br'));
+    divCheckboxes.appendChild(divCheckboxes2)
 
+    divCheckboxes2 = document.createElement('div');
+    divCheckboxes2.id='rain'
     var image = document.createElement('img')
     image.src = '../images/pluie.png';
     image.id='icone';
-    divCheckboxes.appendChild(image);
+    divCheckboxes2.appendChild(image);
     checkboxRainProb = document.createElement('input');
     checkboxRainProb.type = "checkbox";
     checkboxRainProb.id = "RainProb";
@@ -66,94 +75,113 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let labelRainProb = document.createElement('label');
     labelRainProb.htmlFor = "RainProb";
     labelRainProb.appendChild(document.createTextNode("Rain probability : "));
-    divCheckboxes.appendChild(labelRainProb);
-    divCheckboxes.appendChild(checkboxRainProb);
+    divCheckboxes2.appendChild(labelRainProb);
+    divCheckboxes2.appendChild(checkboxRainProb);
     checkboxSunHours = document.createElement('input');
-    divCheckboxes.appendChild(document.createElement('br'));
+    divCheckboxes2.appendChild(document.createElement('br'));
+    divCheckboxes.appendChild(divCheckboxes2)
 
+    divCheckboxes2 = document.createElement('div');
+    divCheckboxes2.id='sun'
     var image = document.createElement('img')
     image.src = '../images/soleil.png';
     image.id='icone';
-    divCheckboxes.appendChild(image);
+    divCheckboxes2.appendChild(image);
     checkboxSunHours.type = "checkbox";
     checkboxSunHours.id = "SunHours";
     checkboxSunHours.checked = true;
     let labelSunHours = document.createElement('label');
     labelSunHours.htmlFor = "SunHours";
     labelSunHours.appendChild(document.createTextNode("Daily Sun Hours : "));
-    divCheckboxes.appendChild(labelSunHours);
-    divCheckboxes.appendChild(checkboxSunHours);
-    divCheckboxes.appendChild(document.createElement('br'));
+    divCheckboxes2.appendChild(labelSunHours);
+    divCheckboxes2.appendChild(checkboxSunHours);
+    divCheckboxes2.appendChild(document.createElement('br'));
+    divCheckboxes.appendChild(divCheckboxes2)
 
+    divCheckboxes2 = document.createElement('div');
+    divCheckboxes2.id='latitude'
     var image = document.createElement('img')
     image.src = '../images/fleche.png';
     image.id='fleche1';
-    divCheckboxes.appendChild(image);
+    divCheckboxes2.appendChild(image);
     checkboxLatitude = document.createElement('input');
     checkboxLatitude.type = "checkbox";
     checkboxLatitude.id = "Latitude";
     let labelLatitude = document.createElement('label');
     labelLatitude.htmlFor = "Latitude";
     labelLatitude.appendChild(document.createTextNode("Latitude : "));
-    divCheckboxes.appendChild(labelLatitude);
-    divCheckboxes.appendChild(checkboxLatitude);
-    divCheckboxes.appendChild(document.createElement('br'));
+    divCheckboxes2.appendChild(labelLatitude);
+    divCheckboxes2.appendChild(checkboxLatitude);
+    divCheckboxes2.appendChild(document.createElement('br'));
+    divCheckboxes.appendChild(divCheckboxes2)
 
+    divCheckboxes2 = document.createElement('div');
+    divCheckboxes2.id='longitude'
     var image = document.createElement('img')
     image.src = '../images/fleche.png';
     image.id='fleche2';
-    divCheckboxes.appendChild(image);
+    divCheckboxes2.appendChild(image);
     checkboxLongitude = document.createElement('input');
     checkboxLongitude.type = "checkbox";
     checkboxLongitude.id = "Longitude";
     let labelLongitude = document.createElement('label');
     labelLongitude.htmlFor = "Longitude";
     labelLongitude.appendChild(document.createTextNode("Longitude : "));
-    divCheckboxes.appendChild(labelLongitude);
-    divCheckboxes.appendChild(checkboxLongitude);
-    divCheckboxes.appendChild(document.createElement('br'));
+    divCheckboxes2.appendChild(labelLongitude);
+    divCheckboxes2.appendChild(checkboxLongitude);
+    divCheckboxes2.appendChild(document.createElement('br'));
+    divCheckboxes.appendChild(divCheckboxes2)
 
+    divCheckboxes2 = document.createElement('div');
+    divCheckboxes2.id='rain'
     var image = document.createElement('img')
     image.src = '../images/pluie.png';
     image.id='icone';
-    divCheckboxes.appendChild(image);
+    divCheckboxes2.appendChild(image);
     checkboxCumulatedRain = document.createElement('input');
     checkboxCumulatedRain.type = "checkbox";
     checkboxCumulatedRain.id = "CumulatedRain";
     let labelCumulatedRain = document.createElement('label');
     labelCumulatedRain.htmlFor = "CumulatedRain";
     labelCumulatedRain.appendChild(document.createTextNode("Cumulated rain in mm : "));
-    divCheckboxes.appendChild(labelCumulatedRain);
-    divCheckboxes.appendChild(checkboxCumulatedRain);
-    divCheckboxes.appendChild(document.createElement('br'));
+    divCheckboxes2.appendChild(labelCumulatedRain);
+    divCheckboxes2.appendChild(checkboxCumulatedRain);
+    divCheckboxes2.appendChild(document.createElement('br'));
+    divCheckboxes.appendChild(divCheckboxes2)
 
+    divCheckboxes2 = document.createElement('div');
+    divCheckboxes2.id='wind'
     var image = document.createElement('img')
     image.src = '../images/vent.png';
     image.id='icone';
-    divCheckboxes.appendChild(image);
+    divCheckboxes2.appendChild(image);
     checkboxAverageWindSpeed = document.createElement('input');
     checkboxAverageWindSpeed.type = "checkbox";
     checkboxAverageWindSpeed.id = "AverageWindSpeed";
     let labelAverageWindSpeed = document.createElement('label');
     labelAverageWindSpeed.htmlFor = "AverageWindSpeed";
     labelAverageWindSpeed.appendChild(document.createTextNode("Average wind speed in Km/H : "));
-    divCheckboxes.appendChild(labelAverageWindSpeed);
-    divCheckboxes.appendChild(checkboxAverageWindSpeed);
-    divCheckboxes.appendChild(document.createElement('br'));
+    divCheckboxes2.appendChild(labelAverageWindSpeed);
+    divCheckboxes2.appendChild(checkboxAverageWindSpeed);
+    divCheckboxes2.appendChild(document.createElement('br'));
+    divCheckboxes.appendChild(divCheckboxes2)
 
+    divCheckboxes2 = document.createElement('div');
+    divCheckboxes2.id='wind'
     var image = document.createElement('img')
     image.src = '../images/manche_à_air.png';
     image.id='icone';
-    divCheckboxes.appendChild(image);
+    divCheckboxes2.appendChild(image);
     checkboxWindDirection = document.createElement('input');
     checkboxWindDirection.type = "checkbox";
     checkboxWindDirection.id = "WindDirection";
     let labelWindDirection = document.createElement('label');
     labelWindDirection.htmlFor = "WindDirection";
     labelWindDirection.appendChild(document.createTextNode("Wind direction : "));
-    divCheckboxes.appendChild(labelWindDirection);
-    divCheckboxes.appendChild(checkboxWindDirection);
-    divCheckboxes.appendChild(document.createElement('br'));
+    divCheckboxes2.appendChild(labelWindDirection);
+    divCheckboxes2.appendChild(checkboxWindDirection);
+    divCheckboxes2.appendChild(document.createElement('br'));
+    divCheckboxes.appendChild(divCheckboxes2)
 
     placeholder.appendChild(divCheckboxes);
 });

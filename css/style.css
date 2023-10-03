@@ -72,12 +72,10 @@ float: right;
     
     margin:auto;
     margin-top: 2%;
-
     height:10%;
     justify-content: center;
     padding-bottom:3%;
     width:100vh;
-
    
 }
 label{
@@ -174,14 +172,22 @@ button:hover, #pc_submit:hover, select:hover {
  */
 
 
+
+#hot, #cold, #rain, #sun, #wind, #longitude, #latitude{
+    flex: 0 0 calc(50% - 10px);
+    margin: 5px;
+    text-align: justify;
+
+}
+
  #icone{
-    width: 4%;
+    width: 10%;
     margin-top: 2%;
     margin-right: 2%;
  }
 
  #fleche1{
-    width: 4%;
+    width: 10%;
     margin-top: 2%;
     margin-right: 2%;
     transform: rotate(90deg);
@@ -189,8 +195,14 @@ button:hover, #pc_submit:hover, select:hover {
 
 
  #fleche2{
-    width: 4%;
+    width: 10%;
     margin-top: 2%;
     margin-right: 2%;
     transform: rotate(180deg);
+ }
+
+ #checkbox{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10%;
  }
