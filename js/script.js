@@ -11,6 +11,7 @@ let codeInsee
 let pc
 let valueInput;
 let usersChoice = new Array()
+let dataCopy;
 
 let checkboxTMax;
 let checkboxTMin;
@@ -189,6 +190,8 @@ pc_submit.addEventListener('click', () => {
                 let card = new WeatherCard(data, usersChoice, index);
                 card.displayCard();
             }
+            dataCopy=data;
+           
         })
         .catch(error => {
             console.error('Error during API request:', error);
@@ -196,6 +199,7 @@ pc_submit.addEventListener('click', () => {
 
     pc_submit.style.display = 'none';
     newSearch.style.display = 'block';
+
 })
 
 
@@ -212,6 +216,15 @@ newSearch.addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", loading);
 
 dayRange.addEventListener("input", () => {
+    document.querySelectorAll(".card").forEach(e=> e.remove());
     dayDisplay.innerHTML = `${vol.value}`;
     days = vol.value - 1;
+    if(!(pc_input.value ==="")){
+        if(dataCopy!=undefined){
+            for(let index = 0; index < days + 1; index++) {
+                let card = new WeatherCard(dataCopy, usersChoice, index);
+                card.displayCard();
+            }
+        }      
+    }
 })

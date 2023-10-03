@@ -13,8 +13,6 @@ class WeatherCard{
         this.date = data['forecast'][days]['datetime'];
         this.weather = data['forecast'][days]['weather'];
 
-
-
         this.weatherCodes = {
             0: "Soleil",
             1: "Peu nuageux",
@@ -106,10 +104,6 @@ class WeatherCard{
             235: "Averses de grêle"
         };
         
-        // Exemple d'utilisation :
-        console.log(weatherCodes[10]); // Cela affichera "Pluie faible"
-        
-
         this.labels = ['Highest temperature', 'Lowest temperature', 'Latitude', 'Longitude', 'Total rain over the day', 'Wind speed', 'Wind direction', 'Total sun hours', 'Rain probability'];
 
         this.tab = new Array();
@@ -129,7 +123,7 @@ class WeatherCard{
     displayCard(){
         const placeholder = document.getElementById('placeholder');
         let date = this.dateTimeFormatting();
-        this.chooseImage();
+        //this.chooseImage();
         let index = 0;
         this.tab.forEach(element => {
             if(element != null && usersChoice[index]){
@@ -159,8 +153,8 @@ class WeatherCard{
         return weekDay + " " + day + " "+ month + " " + year;
           
     }
-    chooseImage(){
+    /*chooseImage(){
         let label = this.weatherConditions[this.weather];
         if()
-    }
+    }*/
 }
