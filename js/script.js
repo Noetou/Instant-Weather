@@ -227,6 +227,7 @@ pc_input.addEventListener('input', () => {
 pc_submit.addEventListener('click', () => {
     pc = valueInput;
     pc_input.disabled = true;
+    pc_submit.disabled = true;
 
     fetch(`https://api.meteo-concept.com/api/forecast/daily?token=9fc5110929e9db4b61fcc700441c5d39e82c9e6d6aeeacc3223498621f238c38&insee=${codeInsee}`)
         .then(response => response.json())

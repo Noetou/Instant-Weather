@@ -119,6 +119,9 @@ button:hover, #pc_submit:hover, select:hover {
     height: 50px;
     float:right;
     margin-top:20%;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.525);
+    padding: 20px;
 }
 
 .divCards {
@@ -126,14 +129,22 @@ button:hover, #pc_submit:hover, select:hover {
     width:50%;
     border : black 2px solid;
     border-radius: 15px;
-
+    margin: 10px;
 }
 
-.divCards :nth-child(0){
+/* doesn't work
+.divCards :nth-child(0){ 
     padding-top: 0;
+    display: none;
+}
+*/
+
+.divCards h1 {
+    font-size: 30px;
+    padding-left: 15%;
 }
 
-.divCards div{
+.divCards div{ /*content inside the card*/
     text-align: left;
     font-size:20px;
 }

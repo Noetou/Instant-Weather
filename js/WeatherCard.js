@@ -10,8 +10,8 @@ class WeatherCard{
         this.windDirection=data['forecast'][day]['dirwind10m'];
         this.sunHours=data['forecast'][day]['sun_hours'];
         this.rainProb=data['forecast'][day]['probarain'];
-        this.date = data['forecast'][days]['datetime'];
-        this.weather = data['forecast'][days]['weather'];
+        this.date = data['forecast'][day]['datetime'];
+        this.weather = data['forecast'][day]['weather'];
 
         this.imageIndex = [0, 1, 2, 6, 10, 20, 40, 100, 141];
 
@@ -146,7 +146,9 @@ class WeatherCard{
             image.src=`images/weather_icons/${countdown}.png`;
         }
         divCards.appendChild(image);
-        divCards.appendChild(document.createTextNode(date));
+        let dateText = document.createElement("h1");
+        dateText.innerText = date;
+        divCards.appendChild(dateText);
         this.tab.forEach(element => {
             if(element != null && usersChoice[index]){
                 let newDiv = document.createElement("div");
@@ -156,6 +158,7 @@ class WeatherCard{
             }
             index ++;
         });
+        divCards.style.backgroundColor = `rgb(128, 194, ${clamp(parseInt(this.tMax) + 215, 0, 255)})`;
         placeholder.appendChild(divCards);
         //picking the right image according to the weather
         
@@ -182,4 +185,16 @@ class WeatherCard{
         let label = this.weatherConditions[this.weather];
         if()
     }*/
+}
+
+function clamp(value, min, max) {
+    if(value < min) {
+        return min;
+    }
+    if(value > max) {
+        return max;
+    }
+    if(value < max && value > min) {
+        return value;
+    }
 }
