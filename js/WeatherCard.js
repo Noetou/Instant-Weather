@@ -158,7 +158,7 @@ class WeatherCard{
             }
             index ++;
         });
-        divCards.style.backgroundColor = `rgb(128, 194, ${clamp(parseInt(this.tMax) + 215, 0, 255)})`;
+        divCards.style.backgroundColor = `rgb(128, 194, ${clamp(parseInt(this.tMax) * 2 + 200, 0, 255)})`;
         placeholder.appendChild(divCards);
         //picking the right image according to the weather
         
@@ -168,8 +168,8 @@ class WeatherCard{
         let dateDays = dateTab[2].substr(0,2);
         let finalDate= dateDays+"-"+dateTab[1]+"-"+dateTab[0];
         this.date=finalDate;
-        const weekDays = ["Dimanche","Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
-        const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+        const weekDays = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
         
         const formattedDate = new Date(dateTab[0], dateTab[1]-1, dateDays);   
@@ -177,7 +177,7 @@ class WeatherCard{
         const day = formattedDate.getDate();
         const month = months[formattedDate.getMonth()];
         const year = dateTab[0];
-        this.date = weekDay + " " + day + " "+ month + " " + year;
+        this.date = weekDay + " the " + day + " of "+ month + " " + year;
         return this.date;
           
     }
