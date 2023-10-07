@@ -168,6 +168,11 @@ button:hover, #pc_submit:hover, select:hover {
 }
 
 
+#chooseDay{
+    font-weight: bold;
+    color: whitesmoke;
+    
+}
 
 
   /**
