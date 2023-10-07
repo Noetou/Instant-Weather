@@ -213,14 +213,40 @@ button:hover, #pc_submit:hover, select:hover {
 
     .divCards{
         display: block;
-        width: 80%; /* Adjust to 80% on smaller screens */
-        margin: 10px auto; /* Center the divCards */
-    
+        width:80%;
+        margin: 10px auto;
     }
-
    
 }
+
+@media screen and (max-width : 425px){
+    body{
+        font-size:4vw;
+        
+    }
+
+    .divCards{
+        display: block;
+        width:70%;
+        margin: 5px auto;
     
+    }
+}
+
+
+@media screen and (max-width: 320px){
+    body{
+        font-size:5vw;
+        
+    }
+
+    .divCards{
+        display: block;
+        width:60%;
+        margin: 4px auto;
+    
+    }
+}
 
 
 
