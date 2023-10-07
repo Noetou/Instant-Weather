@@ -144,10 +144,11 @@ class WeatherCard{
             }
             image.src=`images/weather_icons/${countdown}.png`;
         }
-        divCards.appendChild(image);
+        
         let dateText = document.createElement("h1");
         dateText.innerText = date;
         divCards.appendChild(dateText);
+        divCards.appendChild(image);
         this.tab.forEach(element => {
             if(element != null && usersChoice[index]){
                 let newDiv = document.createElement("div");
@@ -157,6 +158,7 @@ class WeatherCard{
             }
             index ++;
         });
+        
         divCards.style.backgroundColor = `rgb(128, 194, ${clamp(parseInt(this.tMax) * 2 + 200, 0, 255)})`;
         placeholder.appendChild(divCards);
         //picking the right image according to the weather

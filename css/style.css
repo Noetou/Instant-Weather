@@ -1,9 +1,29 @@
+
+/* CSS Reset 
+    http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 * {
     margin: 0;
-    padding: 0;
-    
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+
+
+
+/* Page Style */ 
 body{
     
     font-family: 'Nunito Sans', sans-serif;
@@ -17,9 +37,8 @@ body{
 }
 
 header{
-    width:100%;
-    height: 100%;
-
+    width:auto;
+    height: 80px;
 }
 #main {
     background-color: rgb(14,54,93);  
@@ -57,21 +76,10 @@ p{
     width:100vh;
     border-radius: 15px; 
 }
-
 #chooseDay{
-align-items: center;
+    margin:auto;
+    width:100vh;
 }
-
-#toobo1{
-width: 20%;
-float: right;
-}
-
-#toobofroid{
-    width: 20%;
-    float: left;
-}
-
 
 #form{
     background-color: rgb(255 255 255 / 0.3);
@@ -83,24 +91,25 @@ float: right;
     justify-content: center;
     padding-bottom:3%;
     width:100vh;
-   
 }
 label{
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 
-#form input, button{
+#form input, button,select {
     
     display:inline;
     padding-right:3%;
-    padding-block: 1%;
+    font-size:20px;
 }
 
 .placeholder{
     display: inline;
 }
+
+
 
 button, #pc_submit, select {
     color:black;
@@ -120,10 +129,18 @@ button:hover, #pc_submit:hover, select:hover {
 
 /* weather cards */
 
+.divCards div{ /*content inside the card*/
+    text-align: left;
+    font-size:20px;
+}
+.divCards h1 {
+    font-size: 25px;
+    padding-left: 10%;
+}
+
 .divCards img{
-    height: 50px;
+    height: 40px;
     float:right;
-    margin-top:20%;
     border-radius: 15px;
     background-color: rgba(255, 255, 255, 0.525);
     padding: 20px;
@@ -131,41 +148,83 @@ button:hover, #pc_submit:hover, select:hover {
 
 .divCards {
     padding:5%;
-    width:50%;
+    width:37%;
     border : black 2px solid;
     border-radius: 15px;
     margin: 10px;
 }
 
-/* doesn't work
-.divCards :nth-child(0){ 
-    padding-top: 0;
-    display: none;
-}
-*/
-
-.divCards h1 {
-    font-size: 30px;
-    padding-left: 15%;
-}
-
-.divCards div{ /*content inside the card*/
-    text-align: left;
-    font-size:20px;
+#placeholder .divCards{
+    display:inline-block;
 }
 
 
 
-@media screen and (max-width:800px){
+
+  /**
+ * ----------------------------------------
+ * Pictures
+ * ----------------------------------------
+ */
+
+
+
+ #hot, #cold, #rain, #sun, #wind, #longitude, #latitude{
+    flex: 0 0 calc(50% - 10px);
+    margin: 5px;
+    text-align: justify;
+
+}
+
+ #icone{
+    width: 10%;
+    margin-top: 2%;
+    margin-right: 2%;
+ }
+
+ #fleche1{
+    width: 10%;
+    margin-top: 2%;
+    margin-right: 2%;
+    transform: rotate(90deg);
+ }
+
+
+ #fleche2{
+    width: 10%;
+    margin-top: 2%;
+    margin-right: 2%;
+    transform: rotate(180deg);
+ }
+
+ #checkbox{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10%;
+ }
+
+ /* Media queries */
+
+@media screen and (max-width:100vh){
     body{
         font-size:25px
     }
+    header{
+        width:100vh;
+    }
+    .divCards{
+        display: block;
+    }
+   
 }
+    
 
 @media screen and (max-width:500px) {
     body{
         font-size:20px;
     }
+    
+
     
 }
 /* ----------------------------------------------
@@ -211,44 +270,3 @@ button:hover, #pc_submit:hover, select:hover {
   }
   
 
-  /**
- * ----------------------------------------
- * Pictures
- * ----------------------------------------
- */
-
-
-
-#hot, #cold, #rain, #sun, #wind, #longitude, #latitude{
-    flex: 0 0 calc(50% - 10px);
-    margin: 5px;
-    text-align: justify;
-
-}
-
- #icone{
-    width: 10%;
-    margin-top: 2%;
-    margin-right: 2%;
- }
-
- #fleche1{
-    width: 10%;
-    margin-top: 2%;
-    margin-right: 2%;
-    transform: rotate(90deg);
- }
-
-
- #fleche2{
-    width: 10%;
-    margin-top: 2%;
-    margin-right: 2%;
-    transform: rotate(180deg);
- }
-
- #checkbox{
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 10%;
- }

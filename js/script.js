@@ -204,14 +204,7 @@ pc_input.addEventListener('input', () => {
     usersChoice[7] = checkboxSunHours.checked;
     usersChoice[8] = checkboxRainProb.checked;
 
-    if (checkboxTMax.checked) {
-        usersChoice[0] = true;
-    }
-    else {
-        usersChoice[0] = false;
-    }
-    //
-
+    
     if (valueInput.length == 5) {
         if (regex.test(valueInput)) {
             fetch('https://geo.api.gouv.fr/communes?codePostal='.concat(pc_input.value))
@@ -265,6 +258,7 @@ pc_submit.addEventListener('click', () => {
                 card.displayCard();
             }
             dataCopy=data;
+            newSearch.style.display ='block';
            
         })
         .catch(error => {
