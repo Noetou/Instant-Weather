@@ -207,17 +207,21 @@ button:hover, #pc_submit:hover, select:hover {
 
 @media screen and (max-width:100vh){
     body{
-        font-size:25px
+        font-size:18px;
+        width: 100%;
     }
     header{
         width:100vh;
     }
     .divCards{
         display: block;
+        width:80%;
     }
+
    
 }
     
+
 
 @media screen and (max-width:500px) {
     body{
