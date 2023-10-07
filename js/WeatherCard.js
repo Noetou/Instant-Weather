@@ -178,7 +178,18 @@ class WeatherCard{
         const day = formattedDate.getDate();
         const month = months[formattedDate.getMonth()];
         const year = dateTab[0];
-        this.date = weekDay + " the " + day + " of "+ month + " " + year;
+        if(day == 1 || day ==21 || day ==31){
+            this.date = weekDay + " the " + day + "st of "+ month + " " + year;
+        }
+        else if(day == 2 || day ==22){
+            this.date = weekDay + " the " + day + "nd of "+ month + " " + year;
+        }
+        else if(day == 3 || day ==23){
+            this.date = weekDay + " the " + day + "rd of "+ month + " " + year;
+        }
+        else{
+            this.date = weekDay + " the " + day + "th of "+ month + " " + year;
+        }
         return this.date;
           
     }
