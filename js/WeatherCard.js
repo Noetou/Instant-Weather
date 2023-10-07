@@ -128,22 +128,12 @@ class WeatherCard{
 
     displayCard(){
         const placeholder = document.getElementById('placeholder');
-
-        let date = this.dateTimeFormatting();
         //this.chooseImage();
         let index = 0;
-        let newDiv;
-        this.tab.forEach(element => {
-            if(element != null && usersChoice[index]){
-                newDiv = document.createElement("div");
-                newDiv.classList.add("card");
-                newDiv.innerHTML = `${this.labels[index]} : ${element}`;
-                placeholder.appendChild(newDiv);
-            }
-            index ++;
-        });
-        //picking the right image according to the weather
+        let divCards = document.createElement("div");
+        divCards.classList.add('divCards');
         let image = document.createElement("img");
+        let date = this.dateTimeFormatting();
         if(this.imageIndex.includes(this.weather)) {
             image.src=`images/weather_icons/${this.weather}.png`;    
         }
@@ -154,15 +144,31 @@ class WeatherCard{
             }
             image.src=`images/weather_icons/${countdown}.png`;
         }
-        newDiv.appendChild(image);
+        divCards.appendChild(image);
+        let dateText = document.createElement("h1");
+        dateText.innerText = date;
+        divCards.appendChild(dateText);
+        this.tab.forEach(element => {
+            if(element != null && usersChoice[index]){
+                let newDiv = document.createElement("div");
+                newDiv.classList.add("card");
+                newDiv.innerHTML = `${this.labels[index]} : ${element}`;
+                divCards.appendChild(newDiv);
+            }
+            index ++;
+        });
+        divCards.style.backgroundColor = `rgb(128, 194, ${clamp(parseInt(this.tMax) * 2 + 200, 0, 255)})`;
+        placeholder.appendChild(divCards);
+        //picking the right image according to the weather
+        
     }
     dateTimeFormatting(){
         let dateTab = this.date.split("-");
         let dateDays = dateTab[2].substr(0,2);
         let finalDate= dateDays+"-"+dateTab[1]+"-"+dateTab[0];
         this.date=finalDate;
-        const weekDays = ["Dimanche","Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
-        const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+        const weekDays = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
         
         const formattedDate = new Date(dateTab[0], dateTab[1]-1, dateDays);   
@@ -170,11 +176,24 @@ class WeatherCard{
         const day = formattedDate.getDate();
         const month = months[formattedDate.getMonth()];
         const year = dateTab[0];
-        return weekDay + " " + day + " "+ month + " " + year;
+        this.date = weekDay + " the " + day + " of "+ month + " " + year;
+        return this.date;
           
     }
     /*chooseImage(){
         let label = this.weatherConditions[this.weather];
         if()
     }*/
+}
+
+function clamp(value, min, max) {
+    if(value < min) {
+        return min;
+    }
+    if(value > max) {
+        return max;
+    }
+    if(value < max && value > min) {
+        return value;
+    }
 }
