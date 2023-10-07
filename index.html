@@ -8,29 +8,19 @@
     <title> Instant weather web application </title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
+    <div class="blurry-background"></div>
     <header>
         <div id="main">
             <h1> Instant Weather </h1>
         </div>
     </header>
-    <div id="info">
-        <h2> Welcome to this instant weather web application !</h2>
-        <p> Get the weather of the city you choose, it must be a french post code. </p>
-    </div>
-    <div id="chooseDay">
-        <h1>Choose day</h1>
-        <div class="day-selection">
-            <label for="vol">Day :</label>
-            <p id="day">1</p>
-            <input type="range" id="vol" name="vol" min="1" max="7" value="1">
-        </div>
-    </div>
+    
+
     <div id="form">
         <label for="pc_input">Enter post code :</label>
         <br>
@@ -41,7 +31,14 @@
         <div class="displayParam">
             <div id="placeholder">
             </div>
-            
+        </div>
+        <div id="chooseDay">
+            <h1>Choose day</h1>
+            <div class="day-selection">
+                <label for="vol">Day :</label>
+                <p id="day">1</p>
+                <input type="range" id="vol" name="vol" min="1" max="7" value="1">
+            </div>
         </div>
         <button id="newSearch" class="swirl-in-fwd">New Search</button>
     </div>
