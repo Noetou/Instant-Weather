@@ -25,7 +25,6 @@ footer, header, hgroup, menu, nav, section {
 
 /* Page Style */ 
 body{
-    
     font-family: 'Nunito Sans', sans-serif;
     font-size:30px;
     align-items: center;
@@ -36,20 +35,31 @@ body{
     background: linear-gradient(to top, #ebbba7 0%, #cfc7f8 100%);
 }
 
-header{
-    width:auto;
+header {
     height: 80px;
-}
-#main {
-    background-color: rgb(14,54,93);  
     width:100%;
+    background-color: rgb(46 138 230);
     justify-content: center;
     text-align: center;
-    border-radius: 15px;
-    height:100%;
     margin:auto;
     color:white;
-    
+    position: fixed;
+    z-index: 100;
+    transform: translate(0px, -800px);
+    transition: all 0.2s;
+}
+
+header h1 {
+    padding-top: 1%;
+}
+
+#header_holder {
+    height: 80px;
+    width: 100%;
+}
+
+#header_holder h1 {
+    padding-top: 1%;
 }
 
 h1 {
@@ -74,8 +84,10 @@ p{
     justify-content: center;
     padding-bottom:3%;
     width:100vh;
-    border-radius: 15px; 
+    border-radius: 15px;
+    transition: 0.2s; 
 }
+
 #chooseDay{
     margin:auto;
     width:100vh;

@@ -5,6 +5,7 @@ const newSearch = document.getElementById('newSearch');
 const displayParam = document.getElementsByClassName('displayParam')[0];
 const dayDisplay = document.getElementById('day');
 const dayRange = document.getElementById('vol');
+const header = document.getElementsByTagName('header')[0];
 
 let days = 0
 let codeInsee
@@ -22,7 +23,6 @@ let checkboxLongitude;
 let checkboxCumulatedRain;
 let checkboxAverageWindSpeed;
 let checkboxWindDirection;
-
 
 document.addEventListener("DOMContentLoaded", (event) => {
     divCheckboxes = document.createElement('div');
@@ -233,7 +233,7 @@ pc_input.addEventListener('input', () => {
                         displayParam.insertBefore(selectInput, placeholder)
                         selectInput.addEventListener("change", () => {
                             codeInsee = data[selectInput.value]['code']
-                        })
+                        });
                     }
 
                 })
@@ -292,4 +292,16 @@ dayRange.addEventListener("input", () => {
             }
         }      
     }
-})
+});
+
+document.addEventListener("scroll", (event) => {
+    let y = document.documentElement.scrollTop;
+    if(y == 0) { //top of the page
+        header.style = 'transform: translate(0px, -80px);';
+    }
+    else {
+        header.style = 'transform: translate(0px, 0px);';
+    }
+});
+
+
