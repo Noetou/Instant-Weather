@@ -1,7 +1,7 @@
 # Instant-Weather ⛅
 
 
-# Description 🐵
+# Description 
 🇬🇧 The purpose of our project is to display the weather for a city in France by inputting its post number. You can see the highest and the lowest temperature, the rain probability and the amount of exposure to the sun.
 
 🇫🇷 Notre projet a pour but de voir la météo d'une commune situé en france en entrant son code postal. On peut voir la température maximale, la température minimale, la probalité qu'il pleuve et le temps d'exposition au soleil de la commune.
