@@ -105,11 +105,7 @@ class WeatherCard{
             232: "extreme-night-snow.svg",
             235: "extreme-day-hail.svg"
           };
-          
-        
-        // Exemple d'utilisation :
-        //console.log(weatherCodes[10]); // Cela affichera "Pluie faible"
-        
+           
 
         this.labels = ['Highest temperature', 'Lowest temperature', 'Latitude', 'Longitude', 'Total rain over the day', 'Wind speed', 'Wind direction', 'Total sun hours', 'Rain probability'];
        
@@ -136,6 +132,7 @@ class WeatherCard{
         let image = document.createElement("img");
         let date = this.dateTimeFormatting();
         image.src=`images/final/${this.weatherIcons[this.weather]}`;
+        image.alt=this.weatherIcons[this.weather];
 
         // if(this.imageIndex.includes(this.weather)) {
         //     image.src=`images/weather_icons/${this.weather}.png`;    
@@ -196,10 +193,6 @@ class WeatherCard{
         return this.date;
           
     }
-    /*chooseImage(){
-        let label = this.weatherConditions[this.weather];
-        if()
-    }*/
 }
 
 function clamp(value, min, max) {
