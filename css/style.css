@@ -244,6 +244,9 @@ button:hover, #pc_submit:hover, select:hover {
         margin: 10px auto;
     }
    
+    #form {
+        width:50vh;
+    }
 }
 
 @media screen and (max-width : 425px){
@@ -259,6 +262,10 @@ button:hover, #pc_submit:hover, select:hover {
         margin: 5px auto;
     
     }
+
+    #form {
+        width:40vh;
+    }
 }
 
 
@@ -272,7 +279,9 @@ button:hover, #pc_submit:hover, select:hover {
         display: block;
         width:60%;
         margin: 4px auto;
-    
+    }
+    #form {
+        width:30vh;
     }
 }
 
