@@ -249,6 +249,7 @@ button:hover, #pc_submit:hover, select:hover {
 @media screen and (max-width : 425px){
     body{
         font-size:4vw;
+        width:100%;
         
     }
 
@@ -264,7 +265,7 @@ button:hover, #pc_submit:hover, select:hover {
 @media screen and (max-width: 320px){
     body{
         font-size:5vw;
-        
+        width:100%;
     }
 
     .divCards{
