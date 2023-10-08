@@ -1,3 +1,6 @@
+/**
+ * When called, spawns an HTML card with all the data for the day given in the constructor according to the users choice
+ */
 class WeatherCard {
 
     constructor(data, usersChoice, day) {
@@ -106,27 +109,36 @@ class WeatherCard {
             235: "extreme-day-hail.svg"
         };
 
-
+        /**
+         * labels displayed before each weather statistic
+         */
         this.labels = ['Highest temperature', 'Lowest temperature', 'Latitude', 'Longitude', 'Total rain over the day', 'Wind speed', 'Wind direction', 'Total sun hours', 'Rain probability'];
+
+        /**
+         * units displayed after each weather statistic
+         */
         this.units = [' °C', ' °C', ' °N', ' °E', ' ml', ' km/h', ' °', ' h', ' %'];
 
+        /**
+         * storing all the weather statistics of the day to be accessed easely later
+         */
         this.tab = new Array();
-        this.tab.push(this.tMax); //
-        this.tab.push(this.tMin); //
-        this.tab.push(this.latitude); //
-        this.tab.push(this.longitude); //
-        this.tab.push(this.cumulation); //
-        this.tab.push(this.windSpeed); //
-        this.tab.push(this.windDirection); //
-        this.tab.push(this.sunHours); //
+        this.tab.push(this.tMax);
+        this.tab.push(this.tMin);
+        this.tab.push(this.latitude);
+        this.tab.push(this.longitude);
+        this.tab.push(this.cumulation);
+        this.tab.push(this.windSpeed);
+        this.tab.push(this.windDirection);
+        this.tab.push(this.sunHours);
         this.tab.push(this.rainProb);
-
-
     }
 
+    /**
+     * Gathers data from this.tab and creates all the HTML elements as well as placing them in the document
+     */
     displayCard() {
         const placeholder = document.getElementById('placeholder');
-        //this.chooseImage();
         let index = 0;
         let divCards = document.createElement("div");
         divCards.classList.add('divCards');
@@ -135,23 +147,12 @@ class WeatherCard {
         image.src = `images/final/${this.weatherIcons[this.weather]}`;
         image.alt = this.weatherIcons[this.weather];
 
-        // if(this.imageIndex.includes(this.weather)) {
-        //     image.src=`images/weather_icons/${this.weather}.png`;    
-        // }
-        // else {
-        //     let countdown = this.weather;
-        //     while(!this.imageIndex.includes(countdown)) {
-        //         countdown--;
-        //     }
-        //     image.src=`images/weather_icons/${countdown}.png`;
-        // }
-
         let dateText = document.createElement("h1");
         dateText.innerText = date;
         divCards.appendChild(dateText);
         divCards.appendChild(image);
         this.tab.forEach(element => {
-            if (element != null && usersChoice[index]) {
+            if (element != null && usersChoice[index]) { //whether the user wants this stat or not
                 let newDiv = document.createElement("div");
                 newDiv.classList.add("card");
                 newDiv.innerHTML = `${this.labels[index]} : ${element}${this.units[index]}`;
@@ -160,11 +161,14 @@ class WeatherCard {
             index++;
         });
 
+        //changes the color according the maximum temperature of the day
         divCards.style.backgroundColor = `rgb(128, 194, ${clamp(parseInt(this.tMax) * 2 + 200, 0, 255)})`;
         placeholder.appendChild(divCards);
-        //picking the right image according to the weather
-
     }
+
+    /**
+     * @returns the date formated to English standard as a String
+     */
     dateTimeFormatting() {
         let dateTab = this.date.split("-");
         let dateDays = dateTab[2].substr(0, 2);
@@ -172,7 +176,6 @@ class WeatherCard {
         this.date = finalDate;
         const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
 
         const formattedDate = new Date(dateTab[0], dateTab[1] - 1, dateDays);
         const weekDay = weekDays[formattedDate.getDay()];
@@ -192,10 +195,15 @@ class WeatherCard {
             this.date = weekDay + " the " + day + "th of " + month + " " + year;
         }
         return this.date;
-
     }
 }
 
+/**
+ * @param {*} value the value to be clamped
+ * @param {*} min the maximum value 
+ * @param {*} max the minimum value
+ * @returns the value  or the closest in between min & max
+ */
 function clamp(value, min, max) {
     if (value < min) {
         return min;
