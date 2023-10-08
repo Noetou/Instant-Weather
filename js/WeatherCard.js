@@ -1,15 +1,15 @@
-class WeatherCard{
+class WeatherCard {
 
-    constructor(data, usersChoice, day){  
-        this.tMax=data['forecast'][day]['tmax'];
-        this.tMin=data['forecast'][day]['tmin'];
-        this.latitude=data['forecast'][day]['latitude'];
-        this.longitude=data['forecast'][day]['longitude'];
-        this.cumulation=data['forecast'][day]['rr10'];
-        this.windSpeed=data['forecast'][day]['wind10m'];
-        this.windDirection=data['forecast'][day]['dirwind10m'];
-        this.sunHours=data['forecast'][day]['sun_hours'];
-        this.rainProb=data['forecast'][day]['probarain'];
+    constructor(data, usersChoice, day) {
+        this.tMax = data['forecast'][day]['tmax'];
+        this.tMin = data['forecast'][day]['tmin'];
+        this.latitude = data['forecast'][day]['latitude'];
+        this.longitude = data['forecast'][day]['longitude'];
+        this.cumulation = data['forecast'][day]['rr10'];
+        this.windSpeed = data['forecast'][day]['wind10m'];
+        this.windDirection = data['forecast'][day]['dirwind10m'];
+        this.sunHours = data['forecast'][day]['sun_hours'];
+        this.rainProb = data['forecast'][day]['probarain'];
         this.date = data['forecast'][day]['datetime'];
         this.weather = data['forecast'][day]['weather'];
 
@@ -104,11 +104,12 @@ class WeatherCard{
             231: "overcast-day-snow.svg",
             232: "extreme-night-snow.svg",
             235: "extreme-day-hail.svg"
-          };
-           
+        };
+
 
         this.labels = ['Highest temperature', 'Lowest temperature', 'Latitude', 'Longitude', 'Total rain over the day', 'Wind speed', 'Wind direction', 'Total sun hours', 'Rain probability'];
-       
+        this.units = [' °C', ' °C', ' °N', ' °E', ' ml', ' km/h', ' °', ' h', ' %'];
+
         this.tab = new Array();
         this.tab.push(this.tMax); //
         this.tab.push(this.tMin); //
@@ -120,10 +121,10 @@ class WeatherCard{
         this.tab.push(this.sunHours); //
         this.tab.push(this.rainProb);
 
-    
+
     }
 
-    displayCard(){
+    displayCard() {
         const placeholder = document.getElementById('placeholder');
         //this.chooseImage();
         let index = 0;
@@ -131,8 +132,8 @@ class WeatherCard{
         divCards.classList.add('divCards');
         let image = document.createElement("img");
         let date = this.dateTimeFormatting();
-        image.src=`images/final/${this.weatherIcons[this.weather]}`;
-        image.alt=this.weatherIcons[this.weather];
+        image.src = `images/final/${this.weatherIcons[this.weather]}`;
+        image.alt = this.weatherIcons[this.weather];
 
         // if(this.imageIndex.includes(this.weather)) {
         //     image.src=`images/weather_icons/${this.weather}.png`;    
@@ -144,65 +145,65 @@ class WeatherCard{
         //     }
         //     image.src=`images/weather_icons/${countdown}.png`;
         // }
-        
+
         let dateText = document.createElement("h1");
         dateText.innerText = date;
         divCards.appendChild(dateText);
         divCards.appendChild(image);
         this.tab.forEach(element => {
-            if(element != null && usersChoice[index]){
+            if (element != null && usersChoice[index]) {
                 let newDiv = document.createElement("div");
                 newDiv.classList.add("card");
-                newDiv.innerHTML = `${this.labels[index]} : ${element}`;
+                newDiv.innerHTML = `${this.labels[index]} : ${element}${this.units[index]}`;
                 divCards.appendChild(newDiv);
             }
-            index ++;
+            index++;
         });
-        
+
         divCards.style.backgroundColor = `rgb(128, 194, ${clamp(parseInt(this.tMax) * 2 + 200, 0, 255)})`;
         placeholder.appendChild(divCards);
         //picking the right image according to the weather
-        
+
     }
-    dateTimeFormatting(){
+    dateTimeFormatting() {
         let dateTab = this.date.split("-");
-        let dateDays = dateTab[2].substr(0,2);
-        let finalDate= dateDays+"-"+dateTab[1]+"-"+dateTab[0];
-        this.date=finalDate;
-        const weekDays = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let dateDays = dateTab[2].substr(0, 2);
+        let finalDate = dateDays + "-" + dateTab[1] + "-" + dateTab[0];
+        this.date = finalDate;
+        const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-        
-        const formattedDate = new Date(dateTab[0], dateTab[1]-1, dateDays);   
+
+        const formattedDate = new Date(dateTab[0], dateTab[1] - 1, dateDays);
         const weekDay = weekDays[formattedDate.getDay()];
         const day = formattedDate.getDate();
         const month = months[formattedDate.getMonth()];
         const year = dateTab[0];
-        if(day == 1 || day ==21 || day ==31){
-            this.date = weekDay + " the " + day + "st of "+ month + " " + year;
+        if (day == 1 || day == 21 || day == 31) {
+            this.date = weekDay + " the " + day + "st of " + month + " " + year;
         }
-        else if(day == 2 || day ==22){
-            this.date = weekDay + " the " + day + "nd of "+ month + " " + year;
+        else if (day == 2 || day == 22) {
+            this.date = weekDay + " the " + day + "nd of " + month + " " + year;
         }
-        else if(day == 3 || day ==23){
-            this.date = weekDay + " the " + day + "rd of "+ month + " " + year;
+        else if (day == 3 || day == 23) {
+            this.date = weekDay + " the " + day + "rd of " + month + " " + year;
         }
-        else{
-            this.date = weekDay + " the " + day + "th of "+ month + " " + year;
+        else {
+            this.date = weekDay + " the " + day + "th of " + month + " " + year;
         }
         return this.date;
-          
+
     }
 }
 
 function clamp(value, min, max) {
-    if(value < min) {
+    if (value < min) {
         return min;
     }
-    if(value > max) {
+    if (value > max) {
         return max;
     }
-    if(value < max && value > min) {
+    if (value < max && value > min) {
         return value;
     }
 }
