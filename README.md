@@ -18,14 +18,13 @@ Choose the wanted informations thanks to the checkboxes before sending.
 Click on send and the information about your city appears. 
 To start a new search, click on the "New Search" button.
 
-## :heavy_exclamation_mark: Be careful :heavy_exclamation_mark:
-If you want to add or remove informations from the weather cards, you'll have to do a new search.
-
-
 🇫🇷 Entrez le code postal dans la case "enter post code" puis choisissez votre commune dans la liste déroulante qui apparait.
 Choissisez les informations souhaitées grâce aux cases à cocher avant d'envoyer.
 Cliquez sur "send" et les inforamtions sur votre commune s'affichent. 
 Pour lancer une nouvelle recherche, cliquez sur le bouton "New Search".
+
+## :heavy_exclamation_mark: Be careful :heavy_exclamation_mark:
+If you want to add or remove informations from the weather cards, you'll have to do a new search.
 
 ## :heavy_exclamation_mark: Attention :heavy_exclamation_mark:
 Si vous souhaitez ajouter ou supprimer des informations des cartes météo, vous devrez effectuer une nouvelle recherche.
