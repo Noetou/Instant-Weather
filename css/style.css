@@ -262,6 +262,43 @@ button:hover, #pc_submit:hover, select:hover {
 
    
  }
+
+ @media screen and (max-width: 680px) {
+
+  
+   
+    #form {
+        width:70vh;
+        
+    }
+    #pc_input {
+        width:27vh;
+
+    }
+    #chooseDay {
+        width:auto;
+    }
+
+   
+ }
+ @media screen and (max-width: 560px) {
+
+  
+   
+    #form {
+        width:54vh;
+
+    }
+    #pc_input {
+        width:27vh;
+
+    }
+    #chooseDay {
+        width:auto;
+    }
+
+   
+ }
 @media screen and (max-width : 425px){
   
 

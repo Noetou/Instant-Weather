@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     checkboxCumulatedRain.id = "CumulatedRain";
     let labelCumulatedRain = document.createElement('label');
     labelCumulatedRain.htmlFor = "CumulatedRain";
-    labelCumulatedRain.appendChild(document.createTextNode("Cumulated rain in mm : "));
+    labelCumulatedRain.appendChild(document.createTextNode("Cumulated rain : "));
     divCheckboxes2.appendChild(labelCumulatedRain);
     divCheckboxes2.appendChild(checkboxCumulatedRain);
     divCheckboxes2.appendChild(document.createElement('br'));
