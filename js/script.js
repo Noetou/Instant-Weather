@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     divCheckboxes2 = document.createElement('div');
     divCheckboxes2.id='hot'
     var image = document.createElement('img')
-    image.src = '../images/chaud.png';
+    image.src = 'images/chaud.png';
     image.id='icone';
     divCheckboxes2.appendChild(image);
     checkboxTMax = document.createElement('input');
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     divCheckboxes2 = document.createElement('div');
     divCheckboxes2.id='cold'
     var image = document.createElement('img')
-    image.src = '../images/froid.png';
+    image.src = 'images/froid.png';
     image.id='icone';
     divCheckboxes2.appendChild(image);
     checkboxTMin = document.createElement('input');
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     divCheckboxes2 = document.createElement('div');
     divCheckboxes2.id='rain'
     var image = document.createElement('img')
-    image.src = '../images/pluie.png';
+    image.src = 'images/pluie.png';
     image.id='icone';
     divCheckboxes2.appendChild(image);
     checkboxRainProb = document.createElement('input');
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     divCheckboxes2 = document.createElement('div');
     divCheckboxes2.id='sun'
     var image = document.createElement('img')
-    image.src = '../images/soleil.png';
+    image.src = 'images/soleil.png';
     image.id='icone';
     divCheckboxes2.appendChild(image);
     checkboxSunHours.type = "checkbox";
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     divCheckboxes2 = document.createElement('div');
     divCheckboxes2.id='latitude'
     var image = document.createElement('img')
-    image.src = '../images/fleche.png';
+    image.src = 'images/fleche.png';
     image.id='fleche1';
     divCheckboxes2.appendChild(image);
     checkboxLatitude = document.createElement('input');
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     divCheckboxes2 = document.createElement('div');
     divCheckboxes2.id='longitude'
     var image = document.createElement('img')
-    image.src = '../images/fleche.png';
+    image.src = 'images/fleche.png';
     image.id='fleche2';
     divCheckboxes2.appendChild(image);
     checkboxLongitude = document.createElement('input');
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     divCheckboxes2 = document.createElement('div');
     divCheckboxes2.id='rain'
     var image = document.createElement('img')
-    image.src = '../images/pluie.png';
+    image.src = 'images/pluie.png';
     image.id='icone';
     divCheckboxes2.appendChild(image);
     checkboxCumulatedRain = document.createElement('input');
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     divCheckboxes2 = document.createElement('div');
     divCheckboxes2.id='wind'
     var image = document.createElement('img')
-    image.src = '../images/vent.png';
+    image.src = 'images/vent.png';
     image.id='icone';
     divCheckboxes2.appendChild(image);
     checkboxAverageWindSpeed = document.createElement('input');
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     divCheckboxes2 = document.createElement('div');
     divCheckboxes2.id='wind'
     var image = document.createElement('img')
-    image.src = '../images/manche_à_air.png';
+    image.src = 'images/manche_à_air.png';
     image.id='icone';
     divCheckboxes2.appendChild(image);
     checkboxWindDirection = document.createElement('input');
