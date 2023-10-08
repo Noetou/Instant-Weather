@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     checkboxAverageWindSpeed.id = "AverageWindSpeed";
     let labelAverageWindSpeed = document.createElement('label');
     labelAverageWindSpeed.htmlFor = "AverageWindSpeed";
-    labelAverageWindSpeed.appendChild(document.createTextNode("Average wind speed in Km/H : "));
+    labelAverageWindSpeed.appendChild(document.createTextNode("Average wind speed : "));
     divCheckboxes2.appendChild(labelAverageWindSpeed);
     divCheckboxes2.appendChild(checkboxAverageWindSpeed);
     divCheckboxes2.appendChild(document.createElement('br'));

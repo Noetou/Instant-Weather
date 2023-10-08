@@ -195,6 +195,9 @@ button:hover, #pc_submit:hover, select:hover {
  */
 
 
+ .divCards img {
+    height:40px;
+ }
 
  #hot, #cold, #rain, #sun, #wind, #longitude, #latitude{
     flex: 0 0 calc(50% - 10px);
@@ -233,11 +236,12 @@ button:hover, #pc_submit:hover, select:hover {
  /* Media queries */
 
  @media screen and (max-width: 768px) {
-    body {
-        font-size: 3vw; /* Adjust font size for smaller screens */
-        
+    body{
+        font-size:4vw;
+        width:100%;
+        margin:auto;
     }
-
+  
     .divCards{
         display: block;
         width:80%;
@@ -245,44 +249,68 @@ button:hover, #pc_submit:hover, select:hover {
     }
    
     #form {
-        width:50vh;
-    }
-}
-
-@media screen and (max-width : 425px){
-    body{
-        font-size:4vw;
-        width:100%;
+        width:88vh;
         
     }
+    #pc_input {
+        width:27vh;
+
+    }
+    #chooseDay {
+        width:auto;
+    }
+
+   
+ }
+@media screen and (max-width : 425px){
+  
 
     .divCards{
-        display: block;
-        width:70%;
-        margin: 5px auto;
-    
+        margin: 5px auto;    
     }
 
     #form {
+        width:45vh;
+        text-align: center;
+    }
+
+
+    #checkbox {
+        display: block;
+    }
+
+    .divCards img{
+        float:none;
+    }
+    
+ }
+
+ @media screen and (max-width : 375px){
+    #form {
         width:40vh;
     }
-}
+ }
 
 
 @media screen and (max-width: 320px){
     body{
         font-size:5vw;
-        width:100%;
     }
 
     .divCards{
         display: block;
-        width:60%;
+        width:80%;
         margin: 4px auto;
     }
     #form {
-        width:30vh;
+        width:35vh;
     }
+
+    #pc_input {
+        width:20vh;
+
+    }
+
 }
 
 
