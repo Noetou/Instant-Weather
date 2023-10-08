@@ -1,4 +1,3 @@
-
 /* CSS Reset 
     http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -6,25 +5,30 @@
 */
 * {
     margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
 
-
-
-
-
-/* Page Style */ 
-body{
+/* Page Style */
+body {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 30px;
     align-items: center;
@@ -34,6 +38,7 @@ body{
     display: inline;
 
 }
+
 .blurry-background {
     position: fixed;
     top: 0;
@@ -42,18 +47,17 @@ body{
     height: 100vh;
     background-image: url(../images/62317741.jpg);
     background-attachment: fixed;
-    filter: blur(5px); 
-    z-index: -1; /
+    z-index: -1;/
 }
 
 header {
     height: 80px;
-    width:100%;
+    width: 100%;
     background-color: rgb(46 138 230);
     justify-content: center;
     text-align: center;
-    margin:auto;
-    color:white;
+    margin: auto;
+    color: white;
     position: fixed;
     z-index: 100;
     transform: translate(0px, -800px);
@@ -78,63 +82,66 @@ h1 {
     margin-bottom: 2%;
 }
 
-h2{
+h2 {
     margin-bottom: 2%;
 }
 
-p{
+p {
     margin-bottom: 2%;
 }
 
-#info{
+#info {
     background-color: rgb(255 255 255 / 0.3);
     backdrop-filter: blur(10px);
-    margin:auto;
+    margin: auto;
     margin-top: 2%;
-    height:10%;
+    height: 10%;
     justify-content: center;
-    padding-bottom:3%;
-    width:100vh;
+    padding-bottom: 3%;
+    width: 100vh;
     border-radius: 15px;
-    transition: 0.2s; 
+    transition: 0.2s;
 }
 
-#chooseDay{
-    margin:auto;
-    width:100vh;
+#chooseDay {
+    margin: auto;
+    width: 100vh;
 }
 
-#form{
+#form {
     background-color: rgb(255 255 255 / 0.3);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    margin:auto;
+    margin: auto;
     margin-top: 2%;
-    height:10%;
+    height: 10%;
     justify-content: center;
-    padding-bottom:3%;
-    width:100vh;
+    padding-bottom: 3%;
+    width: 100vh;
 }
-label{
+
+label {
     font-size: 20px;
     font-weight: bold;
 }
 
 
-#form input, button,select {
-    
-    display:inline;
-    font-size:20px;
+#form input,
+button,
+select {
+
+    display: inline;
+    font-size: 20px;
 }
 
-.placeholder{
+.placeholder {
     display: inline;
 }
 
-
-
-button, #pc_submit, select {
-    color:black;
+button,
+#pc_submit,
+select {
+    color: black;
     border-radius: 15px;
     padding-inline: 3%;
     text-align: center;
@@ -143,177 +150,172 @@ button, #pc_submit, select {
     transition: background-color 1s ease;
 }
 
-button:hover, #pc_submit:hover, select:hover {
+button:hover,
+#pc_submit:hover,
+select:hover {
     background-color: rgb(14, 54, 93);
-    color:whitesmoke;
+    color: whitesmoke;
 }
-
 
 /* weather cards */
-
-.divCards div{ /*content inside the card*/
+.divCards div {
+    /*content inside the card*/
     text-align: left;
-    font-size:20px;
+    font-size: 20px;
 }
+
 .divCards h1 {
     font-size: 25px;
     padding-left: 10%;
 }
 
-.divCards img{
+.divCards img {
     height: 40px;
-    float:right;
+    float: right;
     border-radius: 15px;
     background-color: rgba(255, 255, 255, 0.525);
     padding: 20px;
 }
 
 .divCards {
-    padding:5%;
-    width:37%;
-    border : black 2px solid;
+    padding: 5%;
+    width: 37%;
+    border: black 2px solid;
     border-radius: 15px;
     margin: 10px;
 }
 
-#placeholder .divCards{
-    display:inline-block;
+#placeholder .divCards {
+    display: inline-block;
 }
 
-
-#chooseDay{
+#chooseDay {
     font-weight: bold;
     color: whitesmoke;
 
 }
 
-
-  /**
+/**
  * ----------------------------------------
  * Pictures
  * ----------------------------------------
  */
+.divCards img {
+    height: 40px;
+}
 
-
- .divCards img {
-    height:40px;
- }
-
- #hot, #cold, #rain, #sun, #wind, #longitude, #latitude{
+#hot,
+#cold,
+#rain,
+#sun,
+#wind,
+#longitude,
+#latitude {
     flex: 0 0 calc(50% - 10px);
     margin: 5px;
     text-align: justify;
 
 }
 
- #icone{
+#icone {
     width: 10%;
     margin-top: 2%;
     margin-right: 2%;
- }
+}
 
- #fleche1{
+#fleche1 {
     width: 10%;
     margin-top: 2%;
     margin-right: 2%;
     transform: rotate(90deg);
- }
+}
 
-
- #fleche2{
+#fleche2 {
     width: 10%;
     margin-top: 2%;
     margin-right: 2%;
     transform: rotate(180deg);
- }
+}
 
- #checkbox{
+#checkbox {
     display: flex;
     flex-wrap: wrap;
     margin-left: 10%;
- }
+}
 
- /* Media queries */
-
- @media screen and (max-width: 768px) {
-    body{
-        font-size:4vw;
-        width:100%;
-        margin:auto;
+/* Media queries */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 4vw;
+        width: 100%;
+        margin: auto;
     }
-  
-    .divCards{
+
+    .divCards {
         display: block;
-        width:80%;
+        width: 80%;
         margin: 10px auto;
     }
-   
+
     #form {
-        width:88vh;
-        
+        width: 88vh;
+
     }
+
     #pc_input {
-        width:27vh;
+        width: 27vh;
 
     }
+
     #chooseDay {
-        width:auto;
+        width: auto;
     }
+}
 
-   
- }
-@media screen and (max-width : 425px){
-  
-
-    .divCards{
-        margin: 5px auto;    
+@media screen and (max-width : 425px) {
+    .divCards {
+        margin: 5px auto;
     }
 
     #form {
-        width:45vh;
+        width: 45vh;
         text-align: center;
     }
-
 
     #checkbox {
         display: block;
     }
 
-    .divCards img{
-        float:none;
+    .divCards img {
+        float: none;
     }
-    
- }
+}
 
- @media screen and (max-width : 375px){
+@media screen and (max-width : 375px) {
     #form {
-        width:40vh;
+        width: 40vh;
     }
- }
+}
 
-
-@media screen and (max-width: 320px){
-    body{
-        font-size:5vw;
+@media screen and (max-width: 320px) {
+    body {
+        font-size: 5vw;
     }
 
-    .divCards{
+    .divCards {
         display: block;
-        width:80%;
+        width: 80%;
         margin: 4px auto;
     }
+
     #form {
-        width:35vh;
+        width: 35vh;
     }
 
     #pc_input {
-        width:20vh;
-
+        width: 20vh;
     }
-
 }
-
-
 
 /* ----------------------------------------------
  * Generated by Animista on 2023-9-21 21:54:35
@@ -327,34 +329,35 @@ button:hover, #pc_submit:hover, select:hover {
  * animation swirl-in-fwd
  * ----------------------------------------
  */
- .swirl-in-fwd{
-	-webkit-animation: swirl-in-fwd 0.6s ease-out both;
-	        animation: swirl-in-fwd 0.6s ease-out both;
+.swirl-in-fwd {
+    -webkit-animation: swirl-in-fwd 0.6s ease-out both;
+    animation: swirl-in-fwd 0.6s ease-out both;
 }
 
- @-webkit-keyframes swirl-in-fwd{
+@-webkit-keyframes swirl-in-fwd {
     0% {
-      -webkit-transform: rotate(-540deg) scale(0);
-              transform: rotate(-540deg) scale(0);
-      opacity: 0;
+        -webkit-transform: rotate(-540deg) scale(0);
+        transform: rotate(-540deg) scale(0);
+        opacity: 0;
     }
-    100% {
-      -webkit-transform: rotate(0) scale(1);
-              transform: rotate(0) scale(1);
-      opacity: 1;
-    }
-  }
-  @keyframes swirl-in-fwd {
-    0% {
-      -webkit-transform: rotate(-540deg) scale(0);
-              transform: rotate(-540deg) scale(0);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: rotate(0) scale(1);
-              transform: rotate(0) scale(1);
-      opacity: 1;
-    }
-  }
-  
 
+    100% {
+        -webkit-transform: rotate(0) scale(1);
+        transform: rotate(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes swirl-in-fwd {
+    0% {
+        -webkit-transform: rotate(-540deg) scale(0);
+        transform: rotate(-540deg) scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: rotate(0) scale(1);
+        transform: rotate(0) scale(1);
+        opacity: 1;
+    }
+}
